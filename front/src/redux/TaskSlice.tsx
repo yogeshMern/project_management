@@ -27,11 +27,9 @@ const initialState: TaskState = {
   error: null,
 };
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "http://localhost:8000/api/v1";
 
-// ==============================
-// ✅ Fetch Tasks by Project
-// ==============================
+
 export const fetchTasksByProject = createAsyncThunk<
   Task[],
   string,
@@ -61,9 +59,7 @@ export const fetchTasksByProject = createAsyncThunk<
   }
 });
 
-// ==============================
-// ✅ Create Task
-// ==============================
+
 export const createTask = createAsyncThunk<
   { message: string; task: Task },
   Omit<Task, "id">,
@@ -96,9 +92,7 @@ export const createTask = createAsyncThunk<
   }
 });
 
-// ==============================
-// ✅ Update Task
-// ==============================
+
 export const updateTask = createAsyncThunk<
   { message: string; task: Task },
   Task,
@@ -131,9 +125,7 @@ export const updateTask = createAsyncThunk<
   }
 });
 
-// ==============================
-// ✅ Delete Task
-// ==============================
+
 export const deleteTask = createAsyncThunk<
   { message: string; id: string },
   string,
@@ -160,9 +152,7 @@ export const deleteTask = createAsyncThunk<
   }
 });
 
-// ==============================
-// ✅ Slice
-// ==============================
+
 const taskSlice = createSlice({
   name: "tasks",
   initialState,
