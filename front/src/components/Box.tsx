@@ -37,7 +37,12 @@ const Box: React.FC<BoxProps> = ({
       }}
     >
       <div className="text-sm font-semibold tracking-wide text-indigo-500 uppercase flex justify-between">
-        <span>Project</span>
+        <div className="flex gap-5 items-center">
+          <span>Project</span>
+          <span className="font-medium text-blue-600 text-[8px] border rounded-3xl">
+            {status}
+          </span>
+        </div>
         <div className="flex gap-4">
           <span
             onClick={handleEditClick}
@@ -58,6 +63,7 @@ const Box: React.FC<BoxProps> = ({
       </div>
 
       <h2 className="mt-2 text-lg font-medium text-black">{title}</h2>
+
       <p className="mt-4 text-gray-500 text-sm">{description}</p>
 
       {isEditing && (
