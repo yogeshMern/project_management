@@ -60,6 +60,7 @@ const TaskPage = () => {
         <h2 className="text-xl font-bold">
           Tasks for Project: {project?.title}
         </h2>
+
         <button
           onClick={() => {
             setEditTask(null); // reset editing
@@ -95,9 +96,11 @@ const TaskPage = () => {
         {tasks.map((task) => (
           <li key={task.id} className="border rounded p-3 bg-white shadow-sm">
             <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold">{task.title}</h3>
-                <span className="text-sm text-gray-500">{task.status}</span>
+              <div className="flex gap-5 items-center">
+                <h3 className="font-semibold uppercase">{task.title}</h3>
+                <span className="uppercase font-bold text-blue-600 text-[8px] border rounded-3xl p-1">
+                  {task.status}
+                </span>
               </div>
               <div className="flex gap-3 text-sm">
                 <button
