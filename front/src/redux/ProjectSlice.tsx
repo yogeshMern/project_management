@@ -29,7 +29,7 @@ interface UpdateProjectPayload {
   status?: "active" | "completed";
 }
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "http://localhost:8000/api/v1";
 
 // Create Project
 export const createProject = createAsyncThunk<
