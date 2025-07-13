@@ -67,7 +67,7 @@ const Home = () => {
       {/* Project List */}
       <div className="flex flex-wrap gap-6 p-4">
         {loading && <p>Loading projects...</p>}
-        {error && <p className="text-red-600">{error}</p>}
+        {error && <p className="text-red-600">Project not found!</p>}
         {!loading && !error && projects.length === 0 && (
           <p>No projects found.</p>
         )}
