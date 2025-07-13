@@ -8,7 +8,7 @@ const Task = require("../models/taskModel");
 dotenv.config();
 
 const seed = async () => {
-  await mongoose.connect(process.env.MONGO_URI || "");
+  await mongoose.connect("mongodb://localhost:27017/project_management" || "");
 
   await User.deleteMany({});
   await Project.deleteMany({});
